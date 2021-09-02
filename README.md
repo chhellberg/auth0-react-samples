@@ -1,4 +1,4 @@
-# Auth0 React Samples
+# Auth0 React Samples - SPA
 
 [![CircleCI](https://circleci.com/gh/auth0-samples/auth0-react-samples.svg?style=svg)](https://circleci.com/gh/auth0-samples/auth0-react-samples)
 
