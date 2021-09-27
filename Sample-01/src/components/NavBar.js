@@ -7,7 +7,7 @@ import {
   Container,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -22,12 +22,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {
-    user,
-    isAuthenticated,
-    loginWithRedirect,
-    logout,
-  } = useAuth0();
+  // const [authToken, setAuthToken] = useState("")
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
@@ -39,7 +35,7 @@ const NavBar = () => {
     <div className="nav-container">
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          {/* <NavbarBrand className="logo" /> */}
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -54,16 +50,28 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
               {isAuthenticated && (
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/external-api"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    External API
-                  </NavLink>
-                </NavItem>
+                <div className="api-routes">
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/credit-card-api"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Credit Card
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/checking-account-api"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Checking Account
+                    </NavLink>
+                  </NavItem>
+                </div>
               )}
             </Nav>
             <Nav className="d-none d-md-block" navbar>
@@ -71,7 +79,7 @@ const NavBar = () => {
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
-                    color="primary"
+                    style={{ color: "#d0ceff" }}
                     className="btn-margin"
                     onClick={() => loginWithRedirect()}
                   >

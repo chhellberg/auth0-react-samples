@@ -30,6 +30,32 @@
   right: 0;
 }
 
+.result-block {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap;
+  word-wrap: break-word; */
+}
+
 .result-block-container .result-block {
   opacity: 1;
+  /* display: block; */
+}
+
+.accessTokenPrinted {
+  word-wrap: break-word;
+}
+
+.accessTokenContainer {
+  word-wrap: break-word;
+}
+
+.api-routes {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.router-link-exact-active {
+  color: #d0ceff;
 }
